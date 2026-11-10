@@ -365,8 +365,10 @@ CSS = """
   --sl-red: #d64545;
 }
 
-/* 본문 폭과 여백 */
-.block-container { padding-top: 2.5rem; padding-bottom: 4rem; max-width: 720px; }
+/* 본문 폭과 여백
+   상단 여백은 Streamlit 상단 헤더(3.75rem = 60px)보다 커야 합니다.
+   Streamlit Cloud에서는 헤더 배경이 불투명해서, 여백이 작으면 제목이 가려집니다. */
+.block-container { padding-top: 5rem; padding-bottom: 4rem; max-width: 720px; }
 
 /* 헤더 */
 .sl-header h1 { font-size: 1.9rem; font-weight: 800; margin: 0; padding: 0; line-height: 1.25; }
@@ -455,7 +457,7 @@ CSS = """
 .st-key-add_box .stFormSubmitButton button { width: 100%; }
 
 @media (max-width: 640px) {
-  .block-container { padding-left: 1rem; padding-right: 1rem; padding-top: 1.5rem; }
+  .block-container { padding-left: 1rem; padding-right: 1rem; padding-top: 4.5rem; }
   .sl-header h1 { font-size: 1.6rem; }
   .sl-stat b { font-size: 1.3rem; }
 }
